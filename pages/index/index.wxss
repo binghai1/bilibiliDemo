@@ -1,6 +1,61 @@
 .index_page{
     width: 100%;
+    padding: 0 5rpx
+}
+.nav{
+    white-space: nowrap;
+    padding: 5rpx
+}
+.nav_item{
+    display: inline-block;
+    font-size: 30rpx;
+    padding:25rpx 45rpx;
+    
 }
 .active{
-    border-bottom: 1px solid pink;
+    border-bottom: 2px solid pink;
+}
+swiper{
+    margin-top: 20rpx;
+    height: 300rpx;
+}
+swiper swiper-item image{
+    width: 100%;
+}
+.video_wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+
+}
+.video_item{
+    margin-top: 10rpx;
+
+    width: 48%;
+
+}
+.video_main{
+    position: relative
+}
+.video_img{
+    width: 100%;
+    border-radius: 15rpx
+}
+.video_info{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    left: 0;
+    bottom: 10rpx;
+    font-size: 20rpx;
+    color: #fff
+}
+.video_title{
+    font-size: 30rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
 }

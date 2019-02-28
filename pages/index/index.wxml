@@ -2,10 +2,33 @@
 <view class="index_page">
    <MyTitle></MyTitle>
    <view class="nav_wrap">
-      <scroll-view class="nav" >
-         <view class="nav_item {{curIndex===index?'active':''}}" bind-tap="switchBar" data-index="{{index}}" wx:for="{{navList}}" wx:key="{{index}}">
+      <scroll-view class="nav" scroll-x>
+         <view class="nav_item {{curIndex===index?'active':''}}" bindtap="switchBar" data-index="{{index}}" wx:for="{{navList}}" wx:key="{{index}}">
             {{item.text}}
          </view>
       </scroll-view>
+   </view>
+   <!-- 轮播图 -->
+   <swiper autoplay indicator-dots circular interval="3000">
+         <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}">
+            <image mode="widthFit" class="swiper-image" src="{{item.imgSrc}}" />
+         </swiper-item>
+   </swiper>
+   <!-- 视频列表 -->
+   <view class="video_wrap">
+      <view class="video_item" wx:for="{{videosList}}" wx:key="{{index}}">
+         <view class="video_main">
+            <image mode="widthFit" class="video_img" src="{{item.imgSrc}}" mode="widthFix"> </image>
+            <view class="video_info">
+               <view class="left">
+                  <text class="iconfont icon-bofang"></text ><text >{{item.playCount}}</text>
+               </view>
+               <view class="right">
+                  <text class="iconfont icon-pinglun" ></text ><text >{{item.commentCount}}</text>
+               </view>
+            </view>
+         </view>
+         <view class="video_title">{{item.desc}}</view>
+      </view>
    </view>
 </view>

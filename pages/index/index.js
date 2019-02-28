@@ -5,7 +5,14 @@ Page({
    */
   data: {
     navList:[],
-    curIndex:0
+    curIndex:0,
+    swiperList:[],
+    videosList:[]
+  },
+  switchBar(e){
+    this.setData({
+      curIndex:e.target.dataset.index
+    })
   },
   getNavList() {
     const that=this
@@ -20,13 +27,36 @@ Page({
         }
       }
     })
-    
+  },
+  getSwiperList(){
+    const _self=this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/swiperList',
+      success:function(res){
+        if(res.data.code===0){
+          _self.setData({swiperList:res.data.data.swiperList})
+        }
+      }
+    })
+  },
+  getVideoList(){
+    const _self=this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/videosList',
+      success:function(res){
+        if(res.data.code===0){
+          _self.setData({videosList:res.data.data.videosList})
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
       this.getNavList()
+      this.getSwiperList()
+      this.getVideoList()
   },
 
   /**
