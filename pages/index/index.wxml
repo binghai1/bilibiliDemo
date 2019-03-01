@@ -16,7 +16,7 @@
    </swiper>
    <!-- 视频列表 -->
    <view class="video_wrap">
-      <view class="video_item" wx:for="{{videosList}}" wx:key="{{index}}">
+      <navigator url="../detail/detail?id={{item.id}}" class="video_item" wx:for="{{videosList}}" wx:key="{{index}}">
          <view class="video_main">
             <image mode="widthFit" class="video_img" src="{{item.imgSrc}}" mode="widthFix"> </image>
             <view class="video_info">
@@ -29,6 +29,6 @@
             </view>
          </view>
          <view class="video_title">{{item.desc}}</view>
-      </view>
+      </navigator>
    </view>
 </view>
